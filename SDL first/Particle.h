@@ -6,7 +6,6 @@ namespace particle {
 		double m_x;
 		double m_y;
 
-
 		void update(int interval);
 		Particle();
 

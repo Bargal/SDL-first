@@ -10,7 +10,7 @@ namespace particle {
 		if (SDL_Init(SDL_INIT_VIDEO) < 0) {
 			return false;
 		}
-		
+
 		m_window = SDL_CreateWindow("Particle Explosion", SDL_WINDOWPOS_UNDEFINED,
 			SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH,
 			SCREEN_HEIGHT, SDL_VIDEO_VULKAN);
@@ -89,7 +89,7 @@ namespace particle {
 	}
 
 	void Screen::boxBlur() {
-		Uint32 *temp = m_buffer1;
+		Uint32* temp = m_buffer1;
 		m_buffer1 = m_buffer2;
 		m_buffer2 = temp;
 
@@ -101,8 +101,8 @@ namespace particle {
 
 				for (int row = -1; row <= 1; row++) {
 					for (int col = -1; col <= 1; col++) {
-						int currentX = x +1  + col;
-						int currentY = y +1 + row;
+						int currentX = x + 1 + col;
+						int currentY = y + 1 + row;
 						if (currentX >= 0 && currentX < SCREEN_WIDTH && currentY >= 0 &&
 							currentY < SCREEN_HEIGHT) {
 							Uint32 color = m_buffer2[currentY * SCREEN_WIDTH + currentX];
